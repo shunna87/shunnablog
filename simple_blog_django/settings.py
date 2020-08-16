@@ -36,6 +36,10 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    # custom admin
+    'admin_interface',
+    'colorfield',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,6 +54,10 @@ INSTALLED_APPS = [
     'blog',
     'web',
 ]
+
+# custom admin config
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
