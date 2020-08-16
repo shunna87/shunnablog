@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -9,8 +10,9 @@ class Article(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="article")
     title = models.CharField(max_length=250)
-    content = models.TextField()
-    image = models.ImageField(upload_to='images/', default='images/default.png')
+    content = RichTextField()
+    image = models.ImageField(
+        upload_to='images/', default='images/default.png')
     pub_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
