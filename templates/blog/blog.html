@@ -1,4 +1,33 @@
 {% extends 'base.html' %} {% block content %}
 <h1 class="is-size-1">Blog</h1>
+<br />
 
-{% endblock content %}
+{% for article in articles %}
+<div class="box radius-is-small">
+  <article class="media">
+    <div class="media-content">
+      <div class="columns">
+        <div class="column is-11">
+          <h3 class="is-size-4">
+            <a href="/blog/article/{{article.id}}" style="color: black;"
+              >{{ article.title }}</a
+            >
+          </h3>
+          <p class="subtitle is-6">by @{{article.author}}</p>
+
+          <p>{{article.subtitle}}</p>
+        </div>
+        <div class="column">
+          <br />
+          <a href="/blog/article/{{article.id}}" class="button is-text">
+            <ion-icon
+              name="arrow-forward-circle-outline"
+              style="font-size: 40px;"
+            ></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+{% endfor %} {% endblock content %}

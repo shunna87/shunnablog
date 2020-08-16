@@ -1,3 +1,23 @@
 {% extends 'base.html' %} {% block content %}
 <h1 class="is-size-1">Home</h1>
+<br />
+<br />
+<div class="columns">
+  <div class="column has-text-centered">
+    <ion-icon name="newspaper-outline" style="font-size: 128px;"></ion-icon>
+    <br />
+    <a href="/blog/" class="button is-centered">Blog</a>
+  </div>
+
+  <div class="column has-text-centered">
+    <ion-icon name="logo-github" style="font-size: 128px;"></ion-icon>
+    <br />
+    <a
+      href="https://github.com/HAUDRAUFHAUN/simple-blog-django/"
+      class="button"
+    >
+      GitHub Repository
+    </a>
+  </div>
+</div>
 {% endblock content %}

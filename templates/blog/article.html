@@ -1,2 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
+<h1 class="is-size-1">{{article_data.title}}</h1>
+<p class="is-size-5">
+  {{article_data.subtitle}}
+  <br />
+  &mdash; saved by @{{article_data.author.username}} at
+  <time datetime="{{article_data.pub_date}}">{{article_data.pub_date}}</time>
+</p>
+<br />
+<p>{{article_data.content | safe}}</p>
+<br />
+<br />
+<a href="/blog/" class="button is-info is-outlined">Back to Blog Posts</a>
+{% endblock content %}
